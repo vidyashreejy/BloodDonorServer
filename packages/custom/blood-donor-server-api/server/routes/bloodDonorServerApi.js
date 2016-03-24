@@ -32,9 +32,10 @@ module.exports = function(BloodDonorServerApi, app, auth, database) {
     });
   });
   
+  // Project specific routes added by us...
   var cities = require('../controllers/cities');
   app.get('/api/bloodDonorServerApi/cities/get', cities.getCities);
   
-  var bloodGroup = require('../controllers/bloodgroup');
-  app.get('/api/bloodDonorServerApi/bloodgroup/get', bloodGroup.getBloodGroup);
+  var bloodGroup = require('../controllers/bloodGroup');
+  app.get('/api/bloodDonorServerApi/bloodGroup/get', bloodGroup.getBloodGroup);
 };

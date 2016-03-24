@@ -1,21 +1,20 @@
 'use strict';
 
+var mongoose = require('mongoose');
+var BloodGroup = mongoose.model('BloodGroup');
+
 exports.getBloodGroup = function(req, res) {
-    console.log("Entering Function BloodGroup::getBloodGroup()");
+    console.log("--->>> Entering Function bloodGroup::getBloodGroup()");
+      
+    // Fetch information from the DB Table/Collection...
+    BloodGroup.find({}, function(err, bloodGroups) {
+        // Process errors if any...
+        if (err) return console.error("***>>>" + err);
+        
+        console.log("--->>> bloodGroup::getbloodGroup() -> returning JSON data from DB");
+        //return the cities as json packet data and send it to the client
+        res.jsonp(bloodGroups);
+    });
     
-    var bloodGoup=[
-        {id:1, name:'A+'},
-        {id:2, name:'A-'},
-        {id:3, name:'B+'},
-        {id:4, name:'B-'},
-        {id:3, name:'AB+'},
-        {id:4, name:'AB-'},
-        {id:3, name:'O+'},
-        {id:4, name:'O-'}
-    ];
-    //return the blood group as json packet data and send it to the client
-    res.jsonp(bloodGoup);
-    
-    console.log("BloodGroup::getBloodGroup() -> returning JSON data");
-    console.log("Exiting Function BloodGroup::getBloodGroup()");
-  }
+    console.log("--->>> Exiting Function bloodGroup::getBloodGroup()");
+}
