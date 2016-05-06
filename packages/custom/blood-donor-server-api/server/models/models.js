@@ -136,21 +136,22 @@ function populateDonors() {
                 
                 var donorsData = [
                     {Name: 'John',   DOB:Date('1994-02-09'),Sex:'M', BloodGroupID: bloodGroupObjs['A+']._id, 
-                        ContactNo:'88283333',EmailId:'John@yahoo.com',Password:'John', LocationId: cityObjs['Bangalore']._id},
-                    {Name: 'Ram',    DOB:Date('1996-09-30'),Sex:'M', BloodGroupID: bloodGroupObjs['A-']._id, 
-                        ContactNo:'88383333',EmailId:'Ram@gmail.com',Password:'Ram', LocationId: cityObjs['Mangalore']._id}, 
-                    {Name: 'Rahim',  DOB:Date('1985-08-25'),Sex:'M', BloodGroupID: bloodGroupObjs['B+']._id, 
+                        ContactNo:'35350678',EmailId:'John@yahoo.com',Password:'John', LocationId: cityObjs['Bangalore']._id},
+                    {Name: 'Ram',    DOB:Date('1996-09-30'),Sex:'M', BloodGroupID: bloodGroupObjs['A+']._id, 
+                        ContactNo:'88383333',EmailId:'Ram@gmail.com',Password:'Ram', LocationId: cityObjs['Bangalore']._id}, 
+                     {Name: 'Rahim',  DOB:Date('1985-08-25'),Sex:'M', BloodGroupID: bloodGroupObjs['B+']._id, 
                         ContactNo:'884883333',EmailId:'Rahim@yahoo.com',Password:'Rahim', LocationId: cityObjs['Davangere']._id}, 
-                    {Name: 'David',  DOB:Date('1999-07-20'),Sex:'M', BloodGroupID: bloodGroupObjs['A+']._id, 
+                    {Name: 'David',  DOB:Date('1999-07-20'),Sex:'M', BloodGroupID: bloodGroupObjs['B-']._id, 
                         ContactNo:'88483333',EmailId:'David@yahoo.com',Password:'David', LocationId: cityObjs['Mysore']._id}, 
-                    {Name: 'Krishna',DOB:Date('1980-05-15'),Sex:'M', BloodGroupID: bloodGroupObjs['B-']._id, 
+                    {Name: 'Krishna',DOB:Date('1980-05-15'),Sex:'M', BloodGroupID: bloodGroupObjs['AB+']._id, 
                         ContactNo:'58883333',EmailId:'Krishna@hotmail.com',Password:'Krishna', LocationId: cityObjs['Hubli']._id}, 
-                    {Name: 'Sareen', DOB:Date('1985-04-10'),Sex:'F', BloodGroupID: bloodGroupObjs['AB+']._id, 
+                    {Name: 'Sareen', DOB:Date('1985-04-10'),Sex:'F', BloodGroupID: bloodGroupObjs['AB-']._id, 
                         ContactNo:'86883333',EmailId:'Sareen@yahoo.com',Password:'Sareen', LocationId: cityObjs['Dharwad']._id}, 
-                    {Name: 'Fathima',DOB:Date('1990-01-04'),Sex:'F', BloodGroupID: bloodGroupObjs['AB-']._id, 
+                    {Name: 'Fathima',DOB:Date('1990-01-04'),Sex:'F', BloodGroupID: bloodGroupObjs['O-']._id, 
                         ContactNo:'68883333',EmailId:'Fathima@yahoo.com',Password:'Fathima', LocationId: cityObjs['Belgaum']._id }, 
                     {Name: 'Justin', DOB:Date('1977-12-01'),Sex:'M', BloodGroupID: bloodGroupObjs['O+']._id, 
-                        ContactNo:'88783333',EmailId:'Justin@yahoo.com',Password:'Justin', LocationId: cityObjs['Shivamoga']._id}];
+                        ContactNo:'88783333',EmailId:'Justin@yahoo.com',Password:'Justin', LocationId: cityObjs['Shivamoga']._id}
+                ];
                     
                 async.each(donorsData, function(item, cb) {
                     Donor.create(item, cb);
@@ -158,7 +159,7 @@ function populateDonors() {
                     if (err) {
                         handleError(err);
                     }
-                    console.info('--->>> Donor table is is populated with default entries');
+                    console.info('--->>> Donor table is populated with default entries');
                     // Close DB Connection...
                     db.close();
                 });

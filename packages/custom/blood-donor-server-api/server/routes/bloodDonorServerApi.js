@@ -39,6 +39,9 @@ module.exports = function(BloodDonorServerApi, app, auth, database) {
   var bloodGroup = require('../controllers/bloodGroup');
   app.get('/api/bloodDonorServerApi/bloodGroup/get', bloodGroup.getBloodGroup);
   
-  var donor = require('../controllers/donors');
+  var donor = require('../controllers/donor');
   app.get('/api/bloodDonorServerApi/Donor/get', donor.getDonor);
+  
+  var donors = require('../controllers/donors');
+  app.get('/api/bloodDonorServerApi/Donor/get', donors.viewDonors);
 };

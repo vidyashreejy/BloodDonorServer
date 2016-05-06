@@ -12,7 +12,7 @@ exports.getBloodGroup = function(req, res) {
         if (err) return console.error("***>>>" + err);
         
         console.log("--->>> bloodGroup::getbloodGroup() -> returning JSON data from DB");
-        //return the cities as json packet data and send it to the client
+        //return the BloodGroup as json packet data and send it to the client
         res.jsonp(bloodGroups);
     });
     
